@@ -63,6 +63,12 @@ public class LoginCheckFilter implements Filter {
 
     }
 
+    /**
+     * 是否match URL
+     * @param urls
+     * @param requestURI
+     * @return
+     */
     public boolean check(String[] urls, String requestURI){
         for (String url: urls){
             boolean match = PATH_MATCHER.match(url, requestURI);
