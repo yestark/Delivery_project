@@ -121,7 +121,7 @@ public class EmployeeController {
         log.info("page = {},pageSize = {},name = {}",page,pageSize,name);
 
         //构造分页构造器
-        Page pageinfo = new Page(page,pageSize);
+        Page pageInfo = new Page(page,pageSize);
 
         //构造条件构造器
         LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper();
@@ -131,9 +131,9 @@ public class EmployeeController {
         queryWrapper.orderByDesc(Employee::getUpdateTime);
 
         //执行查询
-        employeeService.page(pageinfo,queryWrapper);
+        employeeService.page(pageInfo,queryWrapper);
 
-        return R.success(pageinfo);
+        return R.success(pageInfo);
     }
 
     //根据ID修改员工信息
